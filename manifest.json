@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Custom Cursor and Screen Sharing Extension",
+  "version": "1.0",
+  "description": "Adds a custom cursor to the browser window and enables screen sharing.",
+  "permissions": [
+    "activeTab",
+    "desktopCapture",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["cursor.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
